@@ -1,9 +1,12 @@
 name: Linux Package
 on:
+  workflow_dispatch:
   push:
-      branches: [ master ]
+    tags:
+      - v*
+    branches: [ master ]
   pull_request:
-      branches: [ master ]
+    branches: [ master ]
 
 jobs:
   mangosd:
