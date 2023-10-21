@@ -59,7 +59,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./dockercontainer/Dockerfile-realmd
+          file: ./dockercontainer/DockerFile-realmd
           push: true
           tags: ${{ steps.meta-realmd.outputs.tags }}
           labels: ${{ steps.meta-realmd.outputs.labels }}
