@@ -31,7 +31,11 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: dongstech/mangoszero-mangosd
-          tags: type=semver,pattern={{version}}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
 
       - name: Build and push Docker image mangosd
         uses: docker/build-push-action@v5
@@ -65,7 +69,11 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: dongstech/mangoszero-realmd
-          tags: type=semver,pattern={{version}}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
 
       - name: Build and push Docker image realmd
         uses: docker/build-push-action@v5
