@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./dockercontainer/Dockerfile-mangosd
+          file: dockercontainer/Dockerfile-mangosd
           push: true
           tags: ${{ steps.meta-mangosd.outputs.tags }}
           labels: ${{ steps.meta-mangosd.outputs.labels }}
@@ -65,7 +65,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./dockercontainer/Dockerfile-realmd
+          file: dockercontainer/Dockerfile-realmd
           push: true
           tags: ${{ steps.meta-realmd.outputs.tags }}
           labels: ${{ steps.meta-realmd.outputs.labels }}
